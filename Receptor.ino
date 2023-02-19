@@ -40,7 +40,7 @@ unsigned char manchester(unsigned char *msg)
         {
           subida = true;//detectou-se uma transição de subida
           if(erro_manch_zeros == 1){
-            Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
+            //Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
             erro_manch_zeros = 0;
           }
         }
@@ -49,14 +49,14 @@ unsigned char manchester(unsigned char *msg)
         {
           descida = true; //detectou-se uma transição de descida
           if(erro_manch_uns == 1){
-            Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
+            //Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
             erro_manch_uns = 0;
           }
         }
         else
         {
           return 2; //se não foram detectados 4 zeros ou 4 uns após 4 leituras da porta digital, existe um erro no receptor
-          Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
+          //Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
         }
       }
     }
@@ -85,7 +85,7 @@ unsigned char manchester(unsigned char *msg)
       }
     }
   }
-  Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
+  //Serial.println("Erro! Número de 0s ou 1s incoerente com a codificação Manchester");
   return 2;
 }
 
